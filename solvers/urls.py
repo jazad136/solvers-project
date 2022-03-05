@@ -20,6 +20,7 @@ import minimaxsumgame.views
 import minimaxsumgame.api_views
 
 urlpatterns = [
+    path('minimaxsumgame', minimaxsumgame.views.show, name='get-answer'),
     path('', minimaxsumgame.views.index, name='list-products'),
     path('admin/', admin.site.urls),
 ]
