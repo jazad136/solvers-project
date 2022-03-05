@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+{% block title %}Minimax Sum Game{% endblock %}
+{% block content %}
+<div class="product-list">
+  {% for pack in packs %}
+  <div class="product">
+    {% comment %} <h3>{{ product.name }}</h3>
+    {% if product.photo %}
+    <p>
+      <a href="{% url 'show-product' product.id %}">
+        <img width="500" src="{{ MEDIA_URL }}{{ product.photo }}" />
+      </a>
+    </p>
+    {% endif %}
+    <p>
+      <a href="{% url 'show-product' product.id %}">View</a>
+    </p> {% endcomment %}
+    {% for el in pack.inputs%}
+    <p>{{el}}</p>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -13,4 +13,5 @@ class GetMinimaxResponse(GenericAPIView):
 
     def get(self, request): 
         ins = request.GET.getlist('inputs')
+        
         return Response(ins)

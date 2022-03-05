@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import minimaxsumgame.views
+import minimaxsumgame.api_views
+
 urlpatterns = [
+    path('', minimaxsumgame.views.index, name='list-products'),
     path('admin/', admin.site.urls),
 ]
