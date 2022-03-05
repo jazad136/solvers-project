@@ -19,6 +19,8 @@ def checkAndGetInts(ins, outs):
             return 'badInput'
     return 'ok'
 
+def getMinimaxResult(listS, listL):
+    return "{}, {}".format(min(listS), max(listL))
 def getMinimaxArrays(arr):
     outsSmall = []
     outsLarge = []

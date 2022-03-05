@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from minimaxsumgame.models import MinimaxPack
+from minimaxsumgame.models import MinimaxPack, MinimaxResponse2
 from django.http import JsonResponse
 from minimaxsumgame.service import minimaxsum_service
 # Create your views here.
@@ -27,12 +27,16 @@ def show(request):
         return JsonResponse({
             'answer': 'Only integers are allowed to exist in the input'
         })
-    intOutputs = minimaxsum_service.getMinimaxArrays(intInputs)
-    
+    intOutputsS, intOutputsL = minimaxsum_service.getMinimaxArrays(intInputs)
+    result = minimaxsum_service.getMinimaxResult(intOutputsS, intOutputsL)
+    strInputs = ','.join([str(i) for i in intInputs])
+    # strInputs = [str(i) for i in intInputs]
+    # strOutputsS = ','.join([str(i) for i in intOutputsS])
+    # strOutputsL = ','.join([str(i) for i in intOutputsL])
+    mod = MinimaxResponse2()
+    mod.inputs = strInputs
+    mod.answer = result
     context = {
-        'pack': {
-            'inputs': ','.join(intInputs),
-            'outputs': ','.join(intOutputs)
-        }
+        'pack': mod
     }
-    return render(request, 'minimaxsumgame/inputslisting2.html')
+    return render(request, 'minimaxsumgame/inputslisting2.html', context)
