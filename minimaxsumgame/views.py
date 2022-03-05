@@ -27,8 +27,12 @@ def show(request):
         return JsonResponse({
             'answer': 'Only integers are allowed to exist in the input'
         })
+    intOutputs = minimaxsum_service.getMinimaxArrays(intInputs)
     
     context = {
-        'pack': intInputs
+        'pack': {
+            'inputs': ','.join(intInputs),
+            'outputs': ','.join(intOutputs)
+        }
     }
     return render(request, 'minimaxsumgame/inputslisting2.html')
