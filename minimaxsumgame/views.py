@@ -31,4 +31,4 @@ def show(request):
     context = {
         'pack': intInputs
     }
-    return render(request, 'minimaxsumgame/inputslisting2.html')
+    return render(request, 'minimaxsumgame/inputslisting2.html', context)
