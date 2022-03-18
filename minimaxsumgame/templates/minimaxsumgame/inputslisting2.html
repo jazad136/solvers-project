@@ -3,11 +3,16 @@
 {% block title %}Minimax Sum Game{% endblock %}
 {% block content %}
 <div class="product-list">
+  {% comment %} 
   {% for el in pack.inputs%}
     <h3>Here are the inputs</h3>
     <p>{{pack.el}}</p>
-    {% endfor %}
-  {% endfor %}
+  {% endfor %} 
+  {% endcomment %}
+  
+  <h3>Here are the inputs</h3>
+  <p>{{pack.inputs}}</p>
+
   <p>Here is the Answer</p>
   <p>{{pack.answer}}</p>
 </div>
