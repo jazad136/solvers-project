@@ -19,8 +19,11 @@ from django.urls import path
 import minimaxsumgame.views
 import minimaxsumgame.api_views
 
+import beautifultripletsgame.views
+
 urlpatterns = [
     path('minimaxsumgame', minimaxsumgame.views.show, name='get-answer'),
+    path('beautripletsgame',beautifultripletsgame.views.show, name='beautiful-view'),
     path('', minimaxsumgame.views.index, name='list-products'),
     path('admin/', admin.site.urls),
 ]

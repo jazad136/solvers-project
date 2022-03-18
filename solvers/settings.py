@@ -25,7 +25,7 @@ SECRET_KEY = 'i-35dthtzs#z*mw+f#vqm145j0dk4d6rhcj4i0z0wdga&w+9%p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['saddlercoms.net','localhost']
 
 
 # Application definition
