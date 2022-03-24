@@ -24,6 +24,7 @@ import beautifultripletsgame.views
 urlpatterns = [
     path('minimaxsumgame', minimaxsumgame.views.show, name='get-answer'),
     path('beautripletsgame',beautifultripletsgame.views.show, name='beautiful-view'),
+    path('beautripletsjson',beautifultripletsgame.views.index, name='beautiful-json'),
     path('', minimaxsumgame.views.index, name='list-products'),
     path('admin/', admin.site.urls),
 ]
